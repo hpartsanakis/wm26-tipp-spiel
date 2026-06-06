@@ -1,0 +1,577 @@
+/* ===================================== */
+/* RESET / BASIS */
+/* ===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(circle at right center, rgba(250, 204, 21, 0.1), transparent 35%),
+    linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+}
+
+/* ===================================== */
+/* HEADER */
+/* ===================================== */
+
+.app-header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #020617;
+  border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+}
+
+.app-header h1 {
+  margin: 0;
+  color: #facc15;
+  font-size: 2.2rem;
+}
+
+.app-header p {
+  color: #94a3b8;
+}
+
+/* ===================================== */
+/* NAVIGATION */
+/* ===================================== */
+
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #020617;
+  border-bottom: 1px solid #334155;
+}
+
+.main-nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 14px;
+  background: #1e293b;
+  font-weight: bold;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  background: #facc15;
+  color: #020617;
+}
+
+/* ===================================== */
+/* LAYOUT */
+/* ===================================== */
+
+.app {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  position: relative;
+}
+
+/* Trophy-Hintergrund */
+.app::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  top: 140px;
+  width: 420px;
+  height: 700px;
+  background: url("images/worldcup-trophy.webp") no-repeat center;
+  background-size: contain;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ===================================== */
+/* DASHBOARD */
+/* ===================================== */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(250, 204, 21, 0.18);
+  border-radius: 18px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.stat-card span {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 0.4rem;
+}
+
+.stat-card strong {
+  font-size: 2rem;
+  color: #facc15;
+}
+
+/* ===================================== */
+/* SECTION HEADER */
+/* ===================================== */
+
+.section-header {
+  margin: 2rem 0 1rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #facc15;
+  font-size: 1.8rem;
+}
+
+.section-header p {
+  color: #94a3b8;
+}
+
+/* ===================================== */
+/* TOOLBAR / FILTER */
+/* ===================================== */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  color: #e5e7eb;
+  font-weight: 800;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 62px;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: #facc15;
+}
+
+.filter-btn.active {
+  background: #facc15;
+  color: #020617;
+  border-color: #facc15;
+  box-shadow:
+    0 0 20px rgba(250, 204, 21, 0.45),
+    0 0 40px rgba(250, 204, 21, 0.12);
+}
+
+/* Finale größer und mit Pokal-Hintergrund */
+.finale-btn {
+  min-width: 170px;
+  min-height: 95px;
+  border: 2px solid #facc15;
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.82), rgba(2, 6, 23, 0.82)),
+    url("images/worldcup-trophy.webp");
+  background-size: cover;
+  background-position: center;
+  font-size: 1.3rem;
+  color: #facc15;
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.35);
+}
+
+.finale-btn.active {
+  background:
+    linear-gradient(rgba(250, 204, 21, 0.35), rgba(2, 6, 23, 0.75)),
+    url("images/worldcup-trophy.webp");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+/* ===================================== */
+/* SEARCH */
+/* ===================================== */
+
+.search-box {
+  margin-bottom: 1.5rem;
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #facc15;
+  font-weight: bold;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 1rem;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #facc15;
+}
+
+/* ===================================== */
+/* GROUP TABLES */
+/* ===================================== */
+
+.groups-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.group-card {
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(250, 204, 21, 0.15);
+  border-radius: 18px;
+  padding: 1rem;
+  overflow-x: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.group-card h3 {
+  margin-top: 0;
+  color: #facc15;
+}
+
+.group-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.group-table th,
+.group-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #334155;
+  text-align: left;
+}
+
+.group-table th {
+  color: #facc15;
+  font-size: 0.9rem;
+}
+
+.group-table td {
+  color: #e5e7eb;
+}
+
+/* ===================================== */
+/* MATCH SECTIONS */
+/* ===================================== */
+
+.matches-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.group-matches-section {
+  margin-bottom: 2rem;
+}
+
+.group-matches-section h3 {
+  color: #facc15;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(250, 204, 21, 0.25);
+  padding-bottom: 0.5rem;
+}
+
+.group-matches-list {
+  display: grid;
+  gap: 1rem;
+}
+
+/* ===================================== */
+/* MATCH CARD */
+/* ===================================== */
+
+.match-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+  border: 1px solid rgba(250, 204, 21, 0.16);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.match-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.teams {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.teams strong {
+  color: #facc15;
+  margin: 0 0.5rem;
+}
+
+/* ===================================== */
+/* TIPP / ERGEBNIS */
+/* ===================================== */
+
+.tip-row,
+.result-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.tip-row > span:first-child,
+.result-row > span:first-child {
+  min-width: 85px;
+  color: #94a3b8;
+  font-weight: bold;
+}
+
+.tip-row input,
+.result-row input {
+  width: 70px;
+  padding: 0.75rem;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #020617;
+  color: #e5e7eb;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tip-row input:focus,
+.result-row input:focus {
+  outline: none;
+  border-color: #facc15;
+}
+
+.tip-row button,
+.result-row button {
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tip-row button:first-of-type,
+.result-row button:first-of-type {
+  background: #facc15;
+  color: #020617;
+}
+
+.tip-row button:last-of-type,
+.result-row button:last-of-type {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+/* ===================================== */
+/* POINTS */
+/* ===================================== */
+
+.points-row {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(250, 204, 21, 0.15);
+  color: #facc15;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* ===================================== */
+/* KO NOTE */
+/* ===================================== */
+
+.ko-note {
+  margin-top: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* ===================================== */
+/* FINALE PREMIUM CARD */
+/* ===================================== */
+
+.final-card {
+  position: relative;
+
+  min-height: 900px;
+
+  overflow: hidden;
+
+  border: 2px solid #facc15;
+
+  background:
+    linear-gradient(
+      rgba(2, 6, 23, 0.85),
+      rgba(2, 6, 23, 0.85)
+    ),
+    url("images/worldcup.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  box-shadow:
+    0 0 40px rgba(250, 204, 21, 0.15),
+    0 0 80px rgba(250, 204, 21, 0.08);
+}
+.final-card .match-top {
+  justify-content: center;
+
+  font-size: 1rem;
+
+  color: #111111;
+  margin-top: 2rem;
+}
+.final-card .teams {
+  text-align: center;
+
+  font-size: 4rem;
+
+  margin-top: 4rem;
+
+  margin-bottom: 3rem;
+
+  color: white;
+}
+
+.final-card .teams strong {
+  color: #facc15;
+
+  font-size: 5rem;
+
+  margin: 0 2rem;
+}
+
+.final-card .tip-row,
+.final-card .result-row,
+.final-card .points-row,
+.final-card .ko-note {
+  width: 60%;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.final-card::before {
+  content: "🏆 FINALE";
+
+  position: absolute;
+
+  top: 40px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 5rem;
+
+  font-weight: 900;
+
+  color: #facc15;
+
+  letter-spacing: 8px;
+
+  text-shadow:
+    0 0 20px rgba(250, 204, 21, 0.5);
+
+  z-index: 1;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .app::after {
+    opacity: 0.06;
+    width: 300px;
+  }
+}
+
+@media (max-width: 700px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav,
+  .toolbar,
+  .tip-row,
+  .result-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn,
+  .finale-btn,
+  .tip-row input,
+  .result-row input,
+  .tip-row button,
+  .result-row button {
+    width: 100%;
+  }
+
+  .match-top {
+    flex-direction: column;
+  }
+
+  .app::after {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+
+  .final-card {
+    min-height: auto;
+
+    background-position: center top;
+  }
+
+  .final-card .teams {
+    font-size: 2rem;
+  }
+
+  .final-card .teams strong {
+    font-size: 2.5rem;
+  }
+
+  .final-card .tip-row,
+  .final-card .result-row,
+  .final-card .points-row,
+  .final-card .ko-note {
+    width: 100%;
+  }
+}

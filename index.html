@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- Zeichensatz -->
+    <meta charset="UTF-8" />
+
+    <!-- Optimierung für Handy / iPhone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser-Titel -->
+    <title>WM26 Tipp-Spiel | Gruppen</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="app-header">
+      <h1>WM26 Tipp-Spiel</h1>
+      <p>Gruppen, Tabellen und aktueller Stand der WM 2026</p>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+      <a href="index.html" class="active">Gruppen</a>
+      <a href="spiele.html">Spiele & Tipps</a>
+    </nav>
+
+    <!-- HAUPTBEREICH -->
+    <main class="app">
+      <!-- DASHBOARD -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <span>Gruppen</span>
+          <strong id="totalGroups">12</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Mannschaften</span>
+          <strong id="totalTeams">48</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Spiele</span>
+          <strong id="totalMatches">0</strong>
+        </div>
+
+        <div class="stat-card">
+          <span>Punkte</span>
+          <strong id="totalPoints">0</strong>
+        </div>
+      </section>
+
+      <!-- GRUPPEN-TABELLEN -->
+      <section class="section-header">
+        <h2>Gruppentabellen</h2>
+        <p>
+          Die Tabellen werden später automatisch aus den Ergebnissen berechnet.
+        </p>
+      </section>
+
+      <!-- Hier rendert JavaScript alle Gruppen A bis L -->
+      <section id="groupsContainer" class="groups-container"></section>
+    </main>
+
+    <!-- DATEN -->
+    <script src="data/groups.js"></script>
+    <script src="data/matches.js"></script>
+   
+
+    <!-- APP LOGIK -->
+    <script src="js/index.js"></script>
+  </body>
+</html>
