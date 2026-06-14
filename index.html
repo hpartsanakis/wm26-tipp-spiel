@@ -1,48 +1,44 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <!-- Zeichensatz -->
     <meta charset="UTF-8" />
-
-    <!-- Optimierung für Handy / iPhone -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Browser-Titel -->
     <title>WM26 Tipp-Spiel | Gruppen</title>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-
     <link rel="manifest" href="manifest.json" />
     <meta name="theme-color" content="#facc15" />
     <link rel="apple-touch-icon" href="icons/icon-512.png" />
   </head>
 
   <body>
-    <!-- HEADER -->
     <header class="app-header">
       <h1>WM26 Tipp-Spiel</h1>
       <p>Gruppen, Tabellen und aktueller Stand der WM 2026</p>
     </header>
 
-    <!-- NAVIGATION -->
-    <nav class="main-nav">
-      <a href="index.html" class="active">Gruppen</a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html" class="active" aria-current="page">Gruppen</a>
       <a href="spiele.html">Spiele & Tipps</a>
     </nav>
 
-    <!-- HAUPTBEREICH -->
     <main class="app">
-      <!-- DASHBOARD -->
-      <section class="stats-grid">
+      
+
+      <section class="section-header">
+        <h2>Gruppentabellen</h2>
+      </section>
+
+      <section id="groupsContainer" class="groups-container" aria-live="polite"></section>
+
+      <section class="stats-grid" aria-label="Übersicht">
         <div class="stat-card">
           <span>Gruppen</span>
-          <strong id="totalGroups">12</strong>
+          <strong id="totalGroups">0</strong>
         </div>
 
         <div class="stat-card">
           <span>Mannschaften</span>
-          <strong id="totalTeams">48</strong>
+          <strong id="totalTeams">0</strong>
         </div>
 
         <div class="stat-card">
@@ -55,24 +51,10 @@
           <strong id="totalPoints">0</strong>
         </div>
       </section>
-
-      <!-- GRUPPEN-TABELLEN -->
-      <section class="section-header">
-        <h2>Gruppentabellen</h2>
-        <p>
-          Die Tabellen werden später automatisch aus den Ergebnissen berechnet.
-        </p>
-      </section>
-
-      <!-- Hier rendert JavaScript alle Gruppen A bis L -->
-      <section id="groupsContainer" class="groups-container"></section>
     </main>
 
-    <!-- DATEN -->
     <script src="data/groups.js"></script>
     <script src="data/matches.js"></script>
-
-    <!-- APP LOGIK -->
     <script src="js/index.js"></script>
   </body>
 </html>
